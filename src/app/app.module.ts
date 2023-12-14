@@ -13,6 +13,8 @@ import { FilmUpdateComponent } from './components/films/film-update/film-update.
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { CustomerLoginComponent } from './components/customer-login/customer-login.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CustomerComponent } from './components/customers/customer/customer.component';
+import { CustomerAddComponent } from './components/customers/customer-add/customer-add.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HeaderComponent } from './components/header/header.component';
     AdminLoginComponent,
     CustomerLoginComponent,
     HeaderComponent,
+    CustomerComponent,
+    CustomerAddComponent,
   ],
   imports: [
     BrowserModule,
