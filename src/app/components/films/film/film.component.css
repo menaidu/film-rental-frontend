@@ -1,0 +1,17 @@
+#film-background{
+    background-image: url('https://preview.redd.it/how-can-someone-make-this-background-with-html-and-css-i-v0-zjgs096khv591.jpg?auto=webp&s=9659527da9196c27a8875200b41d20a8e901c341');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:130vh
+}
+
+.filmdetials{
+    position: absolute;
+    top: 170px;
+    left: 125px;
+    width: 1050px;
+    background-color: rgb(19, 20, 5);
+    /* opacity: 0.6; */
+    padding: 40px;
+    color: white;
+}

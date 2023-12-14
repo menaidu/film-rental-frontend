@@ -1,0 +1,71 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-6" id="add-film">
+            <form class="container" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-3">
+                    <label for="filmId">filmId</label>
+                    <input type="number" class="form-control" id="filmId" formControlName="filmId">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" formControlName="title">
+                </div>
+
+                <div class="form-groupb mb-3">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" formControlName="description">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="releaseYear">Release Year</label>
+                    <input type="text" class="form-control" id="releaseYear" formControlName="releaseYear">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="language"> Language Id</label>
+                    <input type="number" class="form-control" id="language" formControlName="language">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="original-language">Original Language Id</label>
+                    <input type="number" class="form-control" id="original-language" formControlName="originalLanguage">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="rental-duration">Rental Duration</label>
+                    <input type="text" class="form-control" id="rental-duration" formControlName="rentalRate">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="rental-rate">Rental Rate</label>
+                    <input type="number" class="form-control" id="rental-rate" formControlName="rentalRate">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="length">Length</label>
+                    <input type="number" class="form-control" id="length" formControlName="length">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="replacement-cost">Replacement Cost</label>
+                    <input type="number" class="form-control" id="replacement-cost" formControlName="replacementCost">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="rating">Rating</label>
+                    <input type="text" class="form-control" id="rating" formControlName="rating">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="special-feature">Special Feature</label>
+                    <input type="text" class="form-control" id="special-feature" formControlName="specialFeature">
+                </div>
+
+                <div class="d-grid  mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
