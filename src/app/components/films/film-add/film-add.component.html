@@ -1,69 +1,102 @@
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-6" id="add-film">
-            <form class="container" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
-                <div class="form-group mb-3">
-                    <label for="filmId">filmId</label>
-                    <input type="number" class="form-control" id="filmId" formControlName="filmId">
-                </div>
+        <div class="col-7" id="add-film">
+            <form (ngSubmit)="addFilm()" #myForm="ngForm">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="text-center">ADD A Film</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label for="fTitle">Film Title</label>
+                            <input type="text" class="form-control" placeholder="Enter Film Title" id="fTitle"
+                                name="fkTitle" #myFilmTitle="ngModel" [(ngModel)]="newFilm.title">
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" formControlName="title">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="fDescription">Film Description</label>
+                            <input type="text" class="form-control" placeholder="Enter Film Description"
+                                id="fDescription" name="fkDescription" required #myFilmDescription="ngModel"
+                                [(ngModel)]="newFilm.description">
+                            <div *ngIf="myFilmDescription.touched" class="text-danger small">Film Description is
+                                Mandatory!</div>
+                        </div>
 
-                <div class="form-groupb mb-3">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description" formControlName="description">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="fYear">Release Year</label>
+                            <input type="text" class="form-control" placeholder="Enter Film Release Year" id="fYear"
+                                name="fkYear" required #myFilmYear="ngModel" [(ngModel)]="newFilm.releaseYear">
+                            <div *ngIf="myFilmYear.touched" class="text-danger small">Release year is Mandatory!</div>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="releaseYear">Release Year</label>
-                    <input type="text" class="form-control" id="releaseYear" formControlName="releaseYear">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="fLanguage">Language</label>
+                            <select class="form-control" id="fLanguage" name="fkLanguage"
+                                [(ngModel)]="newFilm.language.languageId">
+                                <option *ngFor="let lang of language" value="{{lang.languageId}}">
+                                    {{ lang.name }}
+                                </option>
+                            </select>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="language"> Language Id</label>
-                    <input type="number" class="form-control" id="language" formControlName="language">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="fOriginalLanguage">Original Language</label>
+                            <select class="form-control" id="fOriginalLanguage" name="fkOriginalLanguage"
+                                [(ngModel)]="newFilm.originalLanguage.languageId">
+                                <option *ngFor="let lang of language" value="{{lang.languageId}}">
+                                    {{ lang.name }}
+                                </option>
+                            </select>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="original-language">Original Language Id</label>
-                    <input type="number" class="form-control" id="original-language" formControlName="originalLanguage">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="frentalDuration">Rental Duration</label>
+                            <input type="text" class="form-control" placeholder="Enter rental duration"
+                                id="frentalDuration" name="fkrentalDuration" #myFilmRentalDuration="ngModel"
+                                [(ngModel)]="newFilm.rentalDuration">
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="rental-duration">Rental Duration</label>
-                    <input type="text" class="form-control" id="rental-duration" formControlName="rentalRate">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="frentalRate">Rental Rate</label>
+                            <input type="text" class="form-control" placeholder="Enter rental rate" id="frentalRate"
+                                name="fkrentalRate" #myFilmRentalRate="ngModel" [(ngModel)]="newFilm.rentalRate">
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="rental-rate">Rental Rate</label>
-                    <input type="number" class="form-control" id="rental-rate" formControlName="rentalRate">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="freplacementCost">Replacement Cost</label>
+                            <input type="text" class="form-control" placeholder="Enter Replacement cost"
+                                id="freplacementCost" name="fkreplacementCost" #myFilmReplacementCost="ngModel"
+                                [(ngModel)]="newFilm.replacementCost">
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="length">Length</label>
-                    <input type="number" class="form-control" id="length" formControlName="length">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="frating">Rating</label>
+                            <input type="text" class="form-control" placeholder="Enter Rating" id="frating"
+                                name="fkrating" #myFilmRating="ngModel" [(ngModel)]="newFilm.rating">
+                            <div *ngIf="myFilmRating.touched" class="text-danger small">Rating is Mandatory!</div>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="replacement-cost">Replacement Cost</label>
-                    <input type="number" class="form-control" id="replacement-cost" formControlName="replacementCost">
-                </div>
+                        <div class="form-group mb-3">
+                            <label for="fspFeature">Special Feature</label>
+                            <input type="text" class="form-control" placeholder="Enter Rating" id="fspFeature"
+                                name="fkfspFeature" #myFilmSpecialFeature="ngModel"
+                                [(ngModel)]="newFilm.specialFeatures">
+                            <div *ngIf="myFilmSpecialFeature.touched" class="text-danger small">Special Feature is
+                                Mandatory!</div>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label for="rating">Rating</label>
-                    <input type="text" class="form-control" id="rating" formControlName="rating">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="special-feature">Special Feature</label>
-                    <input type="text" class="form-control" id="special-feature" formControlName="specialFeature">
-                </div>
-
-                <div class="d-grid  mb-3">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group mb-3">
+                            <label for="flength">Length</label>
+                            <input type="text" class="form-control" placeholder="Enter Length" id="flength" required
+                                name="fklength" #myFilmLength="ngModel" [(ngModel)]="newFilm.length">
+                            <div *ngIf="myFilmLength.touched" class="text-danger small">Length is Mandatory!</div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-success  d-grid  mb-3">
+                        <button type="submit" class="btn btn-light mr-5 text-success" [disabled]="myForm.invalid">
+                            ADD
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>

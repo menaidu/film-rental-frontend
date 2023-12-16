@@ -1,7 +1,4 @@
-import { Actor } from "./actor.model";
-import { Category } from "./category.model";
 import { Language } from "./language.model";
-import { Store } from "./store.model";
 
 export interface Film{
     filmId: number;
@@ -15,9 +12,9 @@ export interface Film{
     length: number;
     replacementCost: number;
     rating: string;
-    specialFeature: string;
-    allActors: Actor[];
-    allCategories: Category[];
-    allStores: Store[];
+    specialFeatures: string;
+    // allActors: Actor[];
+    // allCategories: Category[];
+    // allStores: Stores[];
     lastUpdate: Date;
 }

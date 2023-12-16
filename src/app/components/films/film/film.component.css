@@ -7,11 +7,11 @@
 
 .filmdetials{
     position: absolute;
-    top: 170px;
+    top: 5rem;
     left: 125px;
-    width: 1050px;
+    width: 70vw;
     background-color: rgb(19, 20, 5);
-    /* opacity: 0.6; */
     padding: 40px;
     color: white;
 }
+

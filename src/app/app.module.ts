@@ -13,8 +13,8 @@ import { FilmUpdateComponent } from './components/films/film-update/film-update.
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { CustomerLoginComponent } from './components/customer-login/customer-login.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CustomerComponent } from './components/customers/customer/customer.component';
-import { CustomerAddComponent } from './components/customers/customer-add/customer-add.component';
+import { FilmListComponent } from './components/films/film-list/film-list.component';
+import { FilmDetailsComponent } from './components/films/film-details/film-details.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import { CustomerAddComponent } from './components/customers/customer-add/custom
     AdminLoginComponent,
     CustomerLoginComponent,
     HeaderComponent,
-    CustomerComponent,
-    CustomerAddComponent,
+    FilmListComponent,
+    FilmDetailsComponent,
   ],
   imports: [
     BrowserModule,
