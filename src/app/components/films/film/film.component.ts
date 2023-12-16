@@ -9,55 +9,23 @@ import { Router } from '@angular/router';
   styleUrl: './film.component.css'
 })
 export class FilmComponent {
-  films:any;
-  allfilms:any
-  page:number = 1;
-  count : number =0;
-  tableSize:number = 7;
-  tableSizes : any = [5, 7, 10, 15];
-  id:number=0;
-  title:any
-  constructor(private film: FilmService,private router: Router){
+  allfilms:Film[] = [];
 
-  }
+  constructor(private film: FilmService,private router: Router){}
 
   ngOnInit(): void {
-    this.getFilm()
+    this.getAllFilm()
   }
-  onTableDataChange(event: any){
-    this.page = event;
-    this.allfilms;
-  }
-  getFilm(){
-    this.film.getFilm().subscribe((data:Film[])=>{
+
+  getAllFilm(){
+    this.film.getAllFilm().subscribe((data:Film[])=>{
       console.log(data);
       this.allfilms =data;
     })
   }
-  onTableSizeChange(event : any) : void{
-    this.tableSize = event.target.value;
-    this.page =1;
-    this.allfilms;
-  }
-  getByStatus(){
-    console.log(this.id);
-    this.getfilmsbyid(this.id);
-  }
-  private getfilmsbyid(id:number){
-    this.film.filmById(id).subscribe((data:Film)=>{
-      console.log(data);
-      this.allfilms=data;
-    })
-  }
+
   invokeUpdate(id:number){
-    this.router.navigate(['films/update',id]);
-
+    this.router.navigate([`film/update`,id]);
   }
 
-  getFilmByTitle(){
-    this.film.getFilmByTitle(this.title).subscribe(data=>{
-      console.log(data);
-      this.allfilms=data;
-    })
-  }
 }

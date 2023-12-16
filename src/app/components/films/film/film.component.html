@@ -1,45 +1,28 @@
 <section id="film-background" class="vh-50 gradient-custom">
-    <div class="filmdetials">
-        <div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <select (change)="onTableSizeChange($event)">
-                            <option *ngFor="let size of tableSizes">
-                                {{size}}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="bystatus m-3">
-
-                        <input placeholder="Enter title" type="text" id="status" name="title" [(ngModel)]="title">
-
-                        <button type="button" (click)="getFilmByTitle()">Search</button>
-                    </div>
-                    <a href="filmadd" class="btn btn-primary">Add Film</a>
-                    <table class="table talbe-striped">
-                        <thead>
-                            <th>FilmID</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Releaseyear</th>
-                            <th>Actions</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let films of allfilms">
-                                <td>{{films.filmId}}</td>
-                                <td>{{films.title}}</td>
-                                <td>{{films.description}}</td>
-                                <td>{{films.releaseYear}}</td>
-                                <td><button type="button" class="btn btn-success"
-                                        (click)="invokeUpdate(films.filmId)">Update</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- <app-pagination previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-                    </app-pagination> -->
-                </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8" style="background-color: aliceblue;">
+                <a routerLink="../../film/add" class="btn btn-primary">Add Film</a>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <th>FilmID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Releaseyear</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let films of allfilms">
+                            <td>{{films.filmId}}</td>
+                            <td>{{films.title}}</td>
+                            <td>{{films.description}}</td>
+                            <td>{{films.releaseYear}}</td>
+                            <td><button type="button" class="btn btn-success"
+                                    (click)="invokeUpdate(films.filmId)">Update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

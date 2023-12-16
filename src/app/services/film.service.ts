@@ -7,40 +7,69 @@ import { Film } from '../models/film.model';
   providedIn: 'root',
 })
 export class FilmService {
-  // private baseUrltitle="http://localhost:8088/api/films/title/"
-  //private baseUrlid="http://localhost:8088/api/films/film_id/"
-  // private baseUrl="http://localhost:8088/api/films/getAll";
 
-  private Url = 'http://localhost:8088/api/films';
-  baseUrl: any;
+  private baseUrl = 'http://localhost:8088/api/films';
 
   constructor(private httpClient: HttpClient) {}
+
+  getAllFilm(): Observable<Film[]> {
+    return this.httpClient.get<Film[]>(`${this.baseUrl}/getAll`);
+  }
+
+  getFilmById(id: number): Observable<Film> {
+    return this.httpClient.get<Film>(`${this.baseUrl}/id/${id}`);
+  }
+
   getFilmByTitle(title: string): Observable<Film> {
-    return this.httpClient.get<Film>(`${this.Url}/title/${title}`);
+    return this.httpClient.get<Film>(`${this.baseUrl}/title/${title}`);
   }
 
-  getFilm(): Observable<Film[]> {
-    return this.httpClient.get<Film[]>(`${this.Url}/getAll`);
+  getFilmByReleaseYear(year: string): Observable<Film> {
+    return this.httpClient.get<Film>(`${this.baseUrl}/year/${year}`);
   }
 
-  filmById(id: number): Observable<Film> {
-    return this.httpClient.get<Film>(`${this.Url}/id/${id}`);
+  getFilmByLanguage(lang: string): Observable<Film> {
+    return this.httpClient.get<Film>(`${this.baseUrl}/language/${lang}`);
+  }
+
+  getFilmByCategory(category: string): Observable<Film>{
+    return this.httpClient.get<Film>(`${this.baseUrl}/category/${category}`);
   }
 
   getFilmByStatus(status: string): Observable<Film[]> {
-    return this.httpClient.get<Film[]>(`${this.Url}status/${status}`);
+    return this.httpClient.get<Film[]>(`${this.baseUrl}status/${status}`);
   }
 
-  addFilm(film: Film): Observable<any> {
+  addFilm(film: any): Observable<string> {
     const url = `${this.baseUrl}/post`;
-    return this.httpClient.post(url, film);
-  }
-
-  deleteFilm(id: number): Observable<Object> {
-    return this.httpClient.delete(`${this.Url}${id}`);
+    return this.httpClient.post(url, film,{responseType:'text'});
   }
   
-  updateFilm(film: any, id: any): Observable<Object> {
-    return this.httpClient.put(`${this.Url}/update/title/${id}`, film);
+  updateFilmTitle(film: Film, id: number): Observable<Film> {
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/title/${id}`, film);
+  }
+
+  updateFilmReleaseYear(film: Film, id: number):  Observable<Film>{
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/releaseyear/${id}`, film);
+  }
+
+  updateFilmRentalDurtion(film: Film, id: number):  Observable<Film>{
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/rentaldurtion/${id}`, film);
+  }
+
+  updateFilmRentalRate(film: Film, id: number):  Observable<Film>{
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/rentalrate/${id}`, film);
+  }
+
+  updateFilmRating(film: Film, id: number):  Observable<Film>{
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/rating/${id}`, film);
+  }
+
+  updateFilmLanguage(film: Film, id: number):  Observable<Film>{
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/language/${id}`, film);
+  }
+
+  updateFilmCategory(film: Film, id: number):  Observable<Film>{
+    return this.httpClient.put<Film>(`${this.baseUrl}/update/category/${id}`, film);
   }
 }
