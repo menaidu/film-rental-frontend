@@ -1,0 +1,33 @@
+<section id="customer-login" class="vh-50 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-5">
+                <h2 class="fw-bold mb-2 text-uppercase text-white text-center">Customer Login</h2>
+                <form (ngSubmit)="login()">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-danger small">
+                                {{ errorMessage }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="userName">User Name</label>
+                                <input type="text" class="form-control" placeholder="Enter User Name" id="userName"
+                                    name="uName" [(ngModel)]="newUser.userName">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="userPassword">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter User Password"
+                                    id="userPassword" name="uPassword" [(ngModel)]="newUser.userPassword">
+                            </div>
+                        </div>
+                        <div class="d-grid  mb-3">
+                            <button type="submit" class="btn btn-success">
+                                LOGIN
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
