@@ -33,6 +33,8 @@ export class FilmAddComponent {
     rating: '',
     specialFeatures: '',
     length: 0,
+    allActors:[],
+    allCategories:[],
     lastUpdate: new Date(),
   };
 
@@ -40,17 +42,11 @@ export class FilmAddComponent {
   constructor(
     private filmService: FilmService,
     private languageService: LanguageService,
-    // private authorHttpService: AuthorHttpService,
     private router: Router
   ) {}
 
   ngOnInit() {
     console.log('in ngOnInit');
-    // this.authorHttpService.getAllAuthors().subscribe((response)=>{
-    //   console.log(response);
-    //   this.allAuthors = response;
-    // });
-
     this.languageService.getLanguages().subscribe((response) => {
       this.language = response;
     });

@@ -1,28 +1,33 @@
 <nav class="navbar sticky-top navbar-dark navbar-expand-lg" id="navBar">
     <div class="container-fluid">
-        <img  height="60px" width="80px" alt="">
+        <a class="navbar-brand" href="#">
+            <img src="path-to-your-logo.png" alt="Your Logo" height="60px" width="80px">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item mx-2">
-                    <a class="nav-link active" aria-current="page" routerLink="sign-in-http">Log Out</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link active" aria-current="page" routerLink="../header/films"  *ngIf="isLoggedIn() && getRole()!='customer'">Films</a>
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
+                    <a class="nav-link active" routerLink="../header/films">Films</a>
                 </li>
 
-                <li class="nav-item mx-2">
-                    <a class="nav-link active" aria-current="page" routerLink="../header/film-list"  *ngIf="isLoggedIn() && getRole()=='customer'">All films</a>
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="../header/film-list">All Films</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn()">
+                    <a class="nav-link" routerLink="login">Logout</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="!isLoggedIn()">
+                    <a class="nav-link" routerLink="login">Login</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div>
-    <img src="https://www.guidingtech.com/wp-content/uploads/fix-firestick-no-signal_4d470f76dc99e18ad75087b1b8410ea9.jpg" height="600" width="100%">
-</div>
-
-
+<router-outlet></router-outlet>

@@ -1,23 +1,26 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-10">
-            <div class="card mb-3" style="max-width: 50rem;">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71i8a-PnChL._AC_UF1000,1000_QL80_.jpg"
-                            class="img-fluid rounded-start" alt="...">
+                            class="img-fluid rounded-start p-3 m-2" alt="Film Poster">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">{{film.title}}</h5>
-                            <p class="card-text">{{film.description}}</p>
-                            <p class="card-text">{{film.releaseYear}}</p>
-                            <p class="card-text">{{film.releaseYear}}</p>
-                            <p class="card-text">{{film.language.name}}</p>
-                            <p class="card-text">{{film.originalLanguage.name}}</p>
-                            <p class="card-text">{{film.rentalDuration}}</p>
-                            <p class="card-text">{{film.rentalRate}}</p>
-                            <p class="card-text">{{film.rating}}</p>
+                            <h2 class="card-title">{{ film.title }}</h2>
+                            <p class="card-text text-muted">{{ film.description }}</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Release Year:</strong> {{ film.releaseYear }}</li>
+                                <li class="list-group-item"><strong>Language:</strong> {{ film.language.name }}</li>
+                                <li class="list-group-item"><strong>Original Language:</strong> {{
+                                    film.originalLanguage.name }}</li>
+                                <li class="list-group-item"><strong>Rental Duration:</strong> {{ film.rentalDuration }}
+                                </li>
+                                <li class="list-group-item"><strong>Rental Rate:</strong> {{ film.rentalRate }}</li>
+                                <li class="list-group-item"><strong>Rating:</strong> {{ film.rating }}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

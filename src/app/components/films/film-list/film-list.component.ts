@@ -59,4 +59,12 @@ export class FilmListComponent {
     });
   }
 
+  selectedSearchType: string  = '';
+
+ 
+
+  performSearch(){
+
+  }
+
 }
