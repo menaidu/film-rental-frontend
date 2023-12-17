@@ -17,37 +17,6 @@
   transform: scale(1.1);
 }
 
-.card-body {
-  padding: 0.5rem;
-  border: none;
-}
-
-#desc {
-  font-size: 10px;
-  margin: 2px 0px;
-}
-
-#price {
-  font-size: 0.7rem;
-  font-weight: bold;
-  margin: 2px 0px;
-}
-
-.card-title {
-  font-size: 0.7rem;
-  font-weight: bold;
-}
-
-.btn {
-  padding: 0.1rem 0.2rem;
-  font-size: 0.8rem;
-}
-
-.card-img-top {
-  margin-left: 14px;
-  margin-top: 10px;
-}
-
 #search-header{
   background-color: rgb(70, 66, 66);
   color: white;
@@ -56,4 +25,23 @@
 
 #search-header p {
   margin: 0.5rem 0rem;
+}
+
+h6{
+  margin: 0rem 0.5rem;
+}
+
+#left-card-container {
+  overflow-x: hidden;
+}
+
+#search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#select-search{
+  width: 1rem;
+  outline: none;
 }

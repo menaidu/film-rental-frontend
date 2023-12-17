@@ -28,4 +28,8 @@ export class FilmComponent {
     this.router.navigate([`film/update`,id]);
   }
 
+  goBack(){
+    
+  }
+
 }

@@ -5,10 +5,10 @@ import { FilmUpdateComponent } from './components/films/film-update/film-update.
 import { FilmAddComponent } from './components/films/film-add/film-add.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { CustomerLoginComponent } from './components/customer-login/customer-login.component';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FilmDetailsComponent } from './components/films/film-details/film-details.component';
 import { FilmListComponent } from './components/films/film-list/film-list.component';
+import { RouteGaurdService } from './services/route-gaurd.service';
 
 const routes: Routes = [
   {
@@ -16,36 +16,38 @@ const routes: Routes = [
     component:HomepageComponent
   },
   {
-    path: 'customer/login',
+    path: 'login',
     component: CustomerLoginComponent
   },
   {
-    path:'admin/login',
-    component: AdminLoginComponent
-  },
-  {
     component:FilmComponent,
-    path:'header/films'
+    path:'header/films',
+    canActivate: [RouteGaurdService]
   },
   {
     path: 'header',
     component: HeaderComponent,
+    canActivate: [RouteGaurdService]
   },
   {
     path: 'film/update/:id',
-    component: FilmUpdateComponent
+    component: FilmUpdateComponent,
+    canActivate: [RouteGaurdService]
   },
   {
     path: 'film/add',
-    component: FilmAddComponent
+    component: FilmAddComponent,
+    canActivate: [RouteGaurdService]
   },
   {
     path: 'header/film-list',
-    component: FilmListComponent
+    component: FilmListComponent,
+    canActivate: [RouteGaurdService]
   },
   {
     path: 'header/film/details',
-    component: FilmDetailsComponent
+    component: FilmDetailsComponent,
+    canActivate: [RouteGaurdService]
   }
 ];
 

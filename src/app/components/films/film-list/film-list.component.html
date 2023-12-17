@@ -1,45 +1,52 @@
 <div class="container-fluid my-3">
     <div class="row justify-content-around" id="search-header">
-        <div class="col-2">
-            <p>Search By Title</p>
-            <div class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="title">
-                <button class="btn btn-success" type="button" (click)="searchFilmByTitle()">Search</button>
-            </div>
-        </div>
-        <div class="col-2">
-            <p>Search By Year</p>
-            <div class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="year">
-                <button class="btn btn-success" type="submit" (click)="searchFilmByYear()">Search</button>
-            </div>
-        </div>
-        <div class="col-2">
-            <p>Search By Category</p>
-            <div class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="category">
-                <button class="btn btn-success" type="submit" (click)="searchFilmByCategory()">Search</button>
-            </div>
-        </div>
-        <div class="col-2">
-            <p>Search By Language</p>
-            <div class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="language">
-                <button class="btn btn-success" type="submit" (click)="searchFilmByLanguage()">Search</button>
+        <div class="col-md-3 mb-3">
+            <div class="input-group">
+                <div id="search" class="mb-3">
+                    <h6>Search By</h6>
+                    <select id="select-search" [(ngModel)]="selectedSearchType">
+                        <option value="title">Title</option>
+                        <option value="year">Year</option>
+                        <option value="category">Category</option>
+                        <option value="language">Language</option>
+                    </select>
+                </div>
+
+                <div class="input-group" *ngIf="selectedSearchType === 'title'">
+                    <input class="form-control me-2" type="search" placeholder="Search by title.." [(ngModel)]="title">
+                    <button class="btn btn-success" type="button" (click)="searchFilmByTitle()">Search</button>
+                </div>
+
+                <div class="input-group" *ngIf="selectedSearchType === 'year'">
+                    <input class="form-control me-2" type="search" placeholder="Search by year..." [(ngModel)]="year">
+                    <button class="btn btn-success" type="button" (click)="searchFilmByYear()">Search</button>
+                </div>
+
+                <div class="input-group" *ngIf="selectedSearchType === 'category'">
+                    <input class="form-control me-2" type="search" placeholder="Search by category..." [(ngModel)]="category">
+                    <button class="btn btn-success" type="button" (click)="searchFilmByCategory()">Search</button>
+                </div>
+
+                <div class="input-group" *ngIf="selectedSearchType === 'language'">
+                    <input class="form-control me-2" type="search" placeholder="Search by language" [(ngModel)]="language">
+                    <button class="btn btn-success" type="button" (click)="searchFilmByLanguage()">Search</button>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col" id="left-card-container">
-            <h3 style="text-align: center; margin: 1.5rem 0rem;">All Films</h3>
+            <h3 class="text-center mb-4">All Films</h3>
             <div class="row justify-content-center">
-                <div class="col-lg-2 col-md-6 col-sm-12 mb-5 mx-4" *ngFor="let film of films" id="cart">
-                    <div class="card" style="width: 100%;">
-                        <img class="card-img-top" alt="..." style="height: 12rem; width: 180px;">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let film of films">
+                    <div class="card h-100">
+                        <img src="https://blogs-images.forbes.com/dongroves/files/2017/05/B-and-A.jpg"
+                            class="card-img-top" alt="Film Poster">
                         <div class="card-body">
-                            <h6 class="card-title">{{film.title}}</h6>
-                            <p id="desc">{{film.description}}</p>
-                            <a routerLink="../film/details" class="btn btn-success">View Film</a>
+                            <h5 class="card-title">{{film.title}}</h5>
+                            <p class="card-text" id="desc">{{film.description}}</p>
+                            <a routerLink="../film/details" class="btn btn-success btn-block">View Film</a>
                         </div>
                     </div>
                 </div>

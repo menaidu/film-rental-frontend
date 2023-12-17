@@ -1,3 +1,5 @@
+import { Actor } from "./actor.model";
+import { Category } from "./category.model";
 import { Language } from "./language.model";
 
 export interface Film{
@@ -13,8 +15,8 @@ export interface Film{
     replacementCost: number;
     rating: string;
     specialFeatures: string;
-    // allActors: Actor[];
-    // allCategories: Category[];
+    allActors: Actor[];
+    allCategories: Category[];
     // allStores: Stores[];
     lastUpdate: Date;
 }

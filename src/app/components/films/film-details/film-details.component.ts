@@ -30,8 +30,11 @@ export class FilmDetailsComponent {
     rating: '',
     specialFeatures: '',
     length: 0,
+    allActors:[],
+    allCategories:[],
     lastUpdate: new Date(),
   };
+
   id: number = 1;
 
   constructor(private filmService: FilmService, private router: Router) {}

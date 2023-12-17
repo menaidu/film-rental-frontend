@@ -81,8 +81,7 @@
                             <input type="text" class="form-control" placeholder="Enter Rating" id="fspFeature"
                                 name="fkfspFeature" #myFilmSpecialFeature="ngModel"
                                 [(ngModel)]="newFilm.specialFeatures">
-                            <div *ngIf="myFilmSpecialFeature.touched" class="text-danger small">Special Feature is
-                                Mandatory!</div>
+                            <div *ngIf="myFilmSpecialFeature.touched" class="text-danger small">Special Feature is Mandatory!</div>
                         </div>
 
                         <div class="form-group mb-3">
@@ -93,12 +92,10 @@
                         </div>
                     </div>
                     <div class="card-footer bg-success  d-grid  mb-3">
-                        <button type="submit" class="btn btn-light mr-5 text-success" [disabled]="myForm.invalid">
-                            ADD
-                        </button>
+                        <button type="submit" class="btn btn-light mr-5 text-success" [disabled]="myForm.invalid">ADD</button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
+    </div> 
 </div>

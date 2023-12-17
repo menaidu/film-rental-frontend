@@ -1,97 +1,269 @@
-<div class="container my-5">
+<!-- <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-7" id="update-film">
-            <form  #myForm="ngForm">
-                <div class="card">
+        <div class="col-md-8" id="update-film">
+            <form #myForm="ngForm">
+                <div class="card shadow">
                     <div class="card-header bg-success text-white">
                         <h2 class="text-center">Update Film</h2>
                     </div>
                     <div class="card-body">
-                        <div class="form-group mb-3">
-                            <label for="fTitle">Film Title</label>
-                            <input type="text" class="form-control" id="fTitle" name="fkTitle" #myFilmTitle="ngModel"
-                                [(ngModel)]="newFilm.title">
-                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateFilmTitle()">Update Title</button>
+                        <div class="mb-3">
+                            <label for="fTitle" class="form-label">Film Title</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="fTitle" name="fkTitle"
+                                    #myFilmTitle="ngModel" [(ngModel)]="newFilm.title" required>
+                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid"
+                                    (click)="updateFilmTitle()">
+                                    Update Title
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="fDescription">Film Description</label>
+                        <div class="mb-3">
+                            <label for="fDescription" class="form-label">Film Description</label>
                             <input type="text" class="form-control" id="fDescription" name="fkDescription" required
                                 #myFilmDescription="ngModel" [(ngModel)]="newFilm.description">
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="fYear">Release Year</label>
-                            <input type="text" class="form-control" id="fYear" name="fkYear" required
-                                #myFilmYear="ngModel" [(ngModel)]="newFilm.releaseYear">
-                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateFilmReleaseYear()">Update Year</button>
+                        <div class="mb-3">
+                            <label for="fYear" class="form-label">Release Year</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="fYear" name="fkYear" required
+                                    #myFilmYear="ngModel" [(ngModel)]="newFilm.releaseYear">
+                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid"
+                                    (click)="updateFilmReleaseYear()">
+                                    Update Year
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="fLanguage">Language</label>
-                            <select class="form-control" id="fLanguage" name="fkLanguage"
-                                [(ngModel)]="newFilm.language.languageId">
-                                <option *ngFor="let lang of language" value="{{lang.languageId}}">
-                                    {{ lang.name }}
-                                </option>
-                            </select>
+                        <div class="mb-3">
+                            <label for="fLanguage" class="form-label">Language</label>
+                            <div class="input-group">
+                                <select class="form-control" id="fLanguage" name="fkLanguage"
+                                    [(ngModel)]="newFilm.language.languageId">
+                                    <option *ngFor="let lang of language" value="{{lang.languageId}}">
+                                        {{ lang.name }}
+                                    </option>
+                                </select>
+                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid"
+                                    (click)="updateFilmLanguage()">
+                                    Update Language
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="fOriginalLanguage">Original Language</label>
-                            <select class="form-control" id="fOriginalLanguage" name="fkOriginalLanguage"
-                                [(ngModel)]="newFilm.originalLanguage.languageId">
-                                <option *ngFor="let lang of language" value="{{lang.languageId}}">
-                                    {{ lang.name }}
-                                </option>
-                            </select>
+                        <div class="mb-3">
+                            <label for="fOriginalLanguage" class="form-label">Original Language</label>
+                            <div class="input-group">
+                                <select class="form-control" id="fOriginalLanguage" name="fkOriginalLanguage"
+                                    [(ngModel)]="newFilm.originalLanguage.languageId">
+                                    <option *ngFor="let lang of language" value="{{lang.languageId}}">
+                                        {{ lang.name }}
+                                    </option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="frentalDuration">Rental Duration</label>
-                            <input type="text" class="form-control" id="frentalDuration" name="fkrentalDuration"
-                                #myFilmRentalDuration="ngModel" [(ngModel)]="newFilm.rentalDuration">
-
-                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateFilmRentalDurtion()">Update Rental Duration</button>
+                        <div class="mb-3">
+                            <label for="frentalDuration" class="form-label">Rental Duration</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="frentalDuration" name="fkrentalDuration"
+                                    #myFilmRentalDuration="ngModel" [(ngModel)]="newFilm.rentalDuration">
+                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid"
+                                    (click)="updateFilmRentalDurtion()">
+                                    Update Rental Duration
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="frentalRate">Rental Rate</label>
-                            <input type="text" class="form-control" id="frentalRate" name="fkrentalRate"
-                                #myFilmRentalRate="ngModel" [(ngModel)]="newFilm.rentalRate">
-
-                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateFilmRentalRate()">Update Rental Rate</button>
+                        <div class="mb-3">
+                            <label for="frentalRate" class="form-label">Rental Rate</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="frentalRate" name="fkrentalRate"
+                                    #myFilmRentalRate="ngModel" [(ngModel)]="newFilm.rentalRate">
+                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid"
+                                    (click)="updateFilmRentalRate()">
+                                    Update Rental Rate
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="freplacementCost">Replacement Cost</label>
+
+                        <div class="mb-3">
+                            <label for="freplacementCost" class="form-label">Replacement Cost</label>
                             <input type="text" class="form-control" id="freplacementCost" name="fkreplacementCost"
                                 #myFilmReplacementCost="ngModel" [(ngModel)]="newFilm.replacementCost">
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="frating">Rating</label>
-                            <input type="text" class="form-control" id="frating" name="fkrating" #myFilmRating="ngModel" [(ngModel)]="newFilm.rating">
-
-                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateFilmRating()">Update Rating</button>
+                        <div class="mb-3">
+                            <label for="frating" class="form-label">Rating</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="frating" name="fkrating"
+                                    #myFilmRating="ngModel" [(ngModel)]="newFilm.rating">
+                                <button type="button" class="btn btn-success" [disabled]="myForm.invalid"
+                                    (click)="updateFilmRating()">
+                                    Update Rating
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="fspFeature">Special Feature</label>
+                        <div class="mb-3">
+                            <label for="fcategory" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="fcategory" name="fkcategory"
+                                #myFilmCategory="ngModel" [(ngModel)]="newFilm.allCategories"
+                                value="{{newFilm.allCategories}}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fspFeature" class="form-label">Special Feature</label>
                             <input type="text" class="form-control" id="fspFeature" name="fkfspFeature"
                                 #myFilmSpecialFeature="ngModel" [(ngModel)]="newFilm.specialFeatures">
                         </div>
 
-                        <div class="form-group">
-                            <label for="flength">Length</label>
+                        <div class="mb-3">
+                            <label for="flength" class="form-label">Length</label>
                             <input type="text" class="form-control" id="flength" required name="fklength"
                                 #myFilmLength="ngModel" [(ngModel)]="newFilm.length">
                         </div>
+
                     </div>
-                    <div class="d-grid m-3">
-                        <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
-                            Update
-                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8" id="update-film">
+            <form #myForm="ngForm">
+                <div class="">
+                    <div class="card-header bg-secondary text-white text-center">
+                        <h2>Update Film</h2>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="mb-3">
+                            <label for="fTitle" class="form-label">Film Title</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="fTitle" name="fkTitle"
+                                    #myFilmTitle="ngModel" [(ngModel)]="newFilm.title" required>
+                                <button type="button" class="btn btn-outline-info btn-sm" [disabled]="myForm.invalid"
+                                    (click)="updateFilmTitle()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fDescription" class="form-label">Film Description</label>
+                            <input type="text" class="form-control" id="fDescription" name="fkDescription" required
+                                #myFilmDescription="ngModel" [(ngModel)]="newFilm.description">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fYear" class="form-label">Release Year</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="fYear" name="fkYear" required
+                                    #myFilmYear="ngModel" [(ngModel)]="newFilm.releaseYear">
+                                <button type="button" class="btn btn-outline-info btn-sm" [disabled]="myForm.invalid"
+                                    (click)="updateFilmReleaseYear()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fLanguage" class="form-label">Language</label>
+                            <div class="input-group">
+                                <select class="form-control" id="fLanguage" name="fkLanguage"
+                                    [(ngModel)]="newFilm.language.languageId">
+                                    <option *ngFor="let lang of language" value="{{lang.languageId}}">
+                                        {{ lang.name }}
+                                    </option>
+                                </select>
+                                <button type="button" class="btn btn-outline-info btn-sm" [disabled]="myForm.invalid"
+                                    (click)="updateFilmLanguage()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fOriginalLanguage" class="form-label">Original Language</label>
+                            <div class="input-group">
+                                <select class="form-control" id="fOriginalLanguage" name="fkOriginalLanguage"
+                                    [(ngModel)]="newFilm.originalLanguage.languageId">
+                                    <option *ngFor="let lang of language" value="{{lang.languageId}}">
+                                        {{ lang.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="frentalDuration" class="form-label">Rental Duration</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="frentalDuration" name="fkrentalDuration"
+                                    #myFilmRentalDuration="ngModel" [(ngModel)]="newFilm.rentalDuration">
+                                <button type="button" class="btn btn-outline-info btn-sm" [disabled]="myForm.invalid"
+                                    (click)="updateFilmRentalDurtion()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="frentalRate" class="form-label">Rental Rate</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="frentalRate" name="fkrentalRate"
+                                    #myFilmRentalRate="ngModel" [(ngModel)]="newFilm.rentalRate">
+                                <button type="button" class="btn btn-outline-info btn-sm" [disabled]="myForm.invalid"
+                                    (click)="updateFilmRentalRate()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="freplacementCost" class="form-label">Replacement Cost</label>
+                            <input type="text" class="form-control" id="freplacementCost" name="fkreplacementCost"
+                                #myFilmReplacementCost="ngModel" [(ngModel)]="newFilm.replacementCost">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="frating" class="form-label">Rating</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="frating" name="fkrating"
+                                    #myFilmRating="ngModel" [(ngModel)]="newFilm.rating">
+                                <button type="button" class="btn btn-outline-info btn-sm" [disabled]="myForm.invalid"
+                                    (click)="updateFilmRating()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fcategory" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="fcategory" name="fkcategory"
+                                #myFilmCategory="ngModel" [(ngModel)]="newFilm.allCategories"
+                                value="{{newFilm.allCategories[0].name}}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fspFeature" class="form-label">Special Feature</label>
+                            <input type="text" class="form-control" id="fspFeature" name="fkfspFeature"
+                                #myFilmSpecialFeature="ngModel" [(ngModel)]="newFilm.specialFeatures">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="flength" class="form-label">Length</label>
+                            <input type="text" class="form-control" id="flength" required name="fklength"
+                                #myFilmLength="ngModel" [(ngModel)]="newFilm.length">
+                        </div>
+
                     </div>
                 </div>
             </form>
