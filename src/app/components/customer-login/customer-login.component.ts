@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class CustomerLoginComponent {
   newUser: User = {
-    userId: 0,
+    userId: 1,
     userName: '',
     userPassword: '',
     allRolesPojo: [],
@@ -28,6 +28,7 @@ export class CustomerLoginComponent {
   login() {
     // validate the username password by
     // consuming endpoint in service layer
+    console.log(this.newUser);
     this.userService.validate(this.newUser).subscribe((response) => {
         // means user name and password is correct
         console.log(response);

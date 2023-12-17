@@ -1,0 +1,99 @@
+
+
+<section style="background-image: url('https://preview.redd.it/how-can-someone-make-this-background-with-html-and-css-i-v0-zjgs096khv591.jpg?auto=webp&s=9659527da9196c27a8875200b41d20a8e901c341'); height:130vh;
+
+
+background-repeat: no-repeat;
+
+
+
+background-size:cover;" class="vh-50 gradient-custom">
+
+<div class="filmdetials">
+<div  class="container" style="background-color: rgb(19,20,5);padding: 40px; position: absolute;
+    top: 200px;
+    left: 80px;
+    width: 500px;">
+</div>
+
+<div  class="container">
+
+    <div class="card">
+
+        <div class="card-body">
+            <div class="bystatus">
+
+                <input placeholder="Status" type="text" id="status" name="id" [(ngModel)]="id">
+                <button type="button" (click)="getByStatus()">Search</button>
+            
+                </div>
+
+            <div>
+
+                <select (change)="onTableSizeChange($event)">
+
+                  <option *ngFor="let size of tableSizes">
+
+                    {{size}}
+
+                  </option>
+
+                </select>
+
+              </div>
+
+<table class="table talbe-striped">
+
+    <thead >
+
+        <th>FilmID</th>
+
+        <th>Title</th>
+
+        <th>Description</th>
+
+        <th>Releaseyear</th>
+
+    </thead>
+
+    <tbody>
+
+        <!-- <tr *ngFor = "let film of filmId| paginate:{itemsPerPage: tableSize, currentPage : page, totalItems: count}"> -->
+        <tr *ngFor = "let film of filmId">
+            <td>{{film.filmId}}</td>
+
+            <td>{{film.title}}</td>
+
+            <td>{{film.description}}</td>
+
+            <td>{{film.releaseYear}}</td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+            <!-- <pagination-controls
+
+                previousLabel="Prev"
+
+                nextLabel="Next"
+
+                (pageChange)="onTableDataChange($event)">
+
+            </pagination-controls> -->
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+           
+            </section>
+
+
+
