@@ -58,4 +58,8 @@ export class FilmAddComponent {
       console.log(response);
     });
   }
+
+  goBack(){
+    this.router.navigate(['header/films']);
+  }
 }

@@ -1,7 +1,11 @@
 <nav class="navbar sticky-top navbar-dark navbar-expand-lg" id="navBar">
     <div class="container-fluid">
+<<<<<<< Updated upstream
         <a class="navbar-brand" href="#" style="font-size: 30px;">
             Film Rental
+=======
+        <a class="navbar-brand" href="#" style="font-size: 30px;">Film Rental
+>>>>>>> Stashed changes
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +24,7 @@
                 </li>
 
                 <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
+<<<<<<< Updated upstream
                     <a class="nav-link active" routerLink="header/customer">All Customer</a>
                 </li>
 
@@ -41,14 +46,29 @@
 
                 <li class="nav-item mx-2" *ngIf="isLoggedIn()">
                     <a class="nav-link active" routerLink="login">Logout</a>
+=======
+                    <a class="nav-link active" routerLink="../header/customer">All Customers</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
+                    <a class="nav-link active" routerLink="../header/customer-update">All Customers</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn()">
+                    <a class="nav-link active" routerLink="logout">Logout</a>
+>>>>>>> Stashed changes
                 </li>
 
                 <li class="nav-item mx-2" *ngIf="!isLoggedIn()">
                     <a class="nav-link active" routerLink="login">Login</a>
                 </li>
 
+<<<<<<< Updated upstream
+=======
+                <i class="material-icons text-light" style="cursor: pointer; font-size: 2.1rem; margin-top: -1rem;" *ngIf="isLoggedIn()">person</i>
+>>>>>>> Stashed changes
             </ul>
-        </div>
+        </div> 
     </div>
 </nav>
 <router-outlet></router-outlet>

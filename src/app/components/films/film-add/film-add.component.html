@@ -3,7 +3,7 @@
         <div class="col-7" id="add-film">
             <form (ngSubmit)="addFilm()" #myForm="ngForm">
                 <div class="card">
-                    <div class="card-header bg-success text-white">
+                    <div class="card-header bg-secondary text-white">
                         <h2 class="text-center">ADD A Film</h2>
                     </div>
                     <div class="card-body">
@@ -90,12 +90,18 @@
                                 name="fklength" #myFilmLength="ngModel" [(ngModel)]="newFilm.length">
                             <div *ngIf="myFilmLength.touched" class="text-danger small">Length is Mandatory!</div>
                         </div>
-                    </div>
-                    <div class="card-footer bg-success  d-grid  mb-3">
-                        <button type="submit" class="btn btn-light mr-5 text-success" [disabled]="myForm.invalid">ADD</button>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-secondary" [disabled]="myForm.invalid">ADD</button>
+                        </div>
                     </div>
                 </div>
             </form>
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-secondary btn-lg px-4" (click)="goBack()"
+                    style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    Back
+                </button>
+            </div>
         </div>
     </div> 
 </div>

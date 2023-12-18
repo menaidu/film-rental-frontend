@@ -9,6 +9,7 @@
                         <option value="year">Year</option>
                         <option value="category">Category</option>
                         <option value="language">Language</option>
+                        <option value="rate">Rental rate</option>
                     </select>
                 </div>
 
@@ -31,6 +32,11 @@
                     <input class="form-control me-2" type="search" placeholder="Search by language" [(ngModel)]="language">
                     <button class="btn btn-success" type="button" (click)="searchFilmByLanguage()">Search</button>
                 </div>
+
+                <div class="input-group" *ngIf="selectedSearchType === 'rate'">
+                    <input class="form-control me-2" type="search" placeholder="Search by rate" [(ngModel)]="rate">
+                    <button class="btn btn-success" type="button" (click)="searchFilmByRentalRateGreaterThan()">Search</button>
+                </div>
             </div>
         </div>
     </div>
@@ -42,6 +48,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let film of films">
                     <div class="card h-100">
                         <img src="{{film.url}}"
+<<<<<<< Updated upstream
                             class="card-img-top" alt="Film Poster">
                         <div class="card-body">
                             <h5 class="card-title">{{film.title}}</h5>
@@ -50,10 +57,27 @@
                             <button type="button" class="btn btn-outline-info btn-sm"
                                     (click)="invokeView(film.filmId)">View Film</button>
                             <!-- <a routerLink="../film/details" class="btn btn-success btn-block">View Film</a> -->
+=======
+                            class="card-img-top" height="100%" alt="Film Poster">
+                        <div class="card-body">
+                            <h5 class="card-title">{{film.title}}</h5>
+                            <p class="card-text" id="desc">{{film.description}}</p>
+                            <!-- <a routerLink="../{{film.filmId}}/film/details" class="btn btn-success btn-block">View Film</a> -->
+
+                            <button type="button" class="btn btn-outline-info btn-sm"
+                                    (click)="invokeView(film.filmId)">View Film</button>
+>>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="button" class="btn btn-secondary btn-lg px-4" (click)="goBack()"
+                style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                Back
+            </button>
         </div>
     </div>
 </div>

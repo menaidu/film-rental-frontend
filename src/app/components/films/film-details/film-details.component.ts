@@ -36,9 +36,12 @@ export class FilmDetailsComponent {
     lastUpdate: new Date(),
   };
 
-  id: number = 1;
+  id: number = 0;
 
+<<<<<<< Updated upstream
   // constructor(private filmService: FilmService, private router: Router) {}
+=======
+>>>>>>> Stashed changes
   constructor(private filmService: FilmService, private router: Router, private activatedRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -51,5 +54,9 @@ export class FilmDetailsComponent {
       console.log(data);
       this.film = data;
     });
+  }
+
+  goBack(){
+    this.router.navigate(['header/films']);
   }
 }

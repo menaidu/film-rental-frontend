@@ -11,14 +11,11 @@ import { Film } from '../../../models/film.model';
 export class FilmListComponent {
   // films: Film[] = [] ;
   films: any;
-
   title: string = '';
-
   year: string = '';
-
   category: string = '';
-
   language: string = '';
+  rate: number = 0;
 
   constructor(
     private filmService: FilmService,
@@ -59,16 +56,25 @@ export class FilmListComponent {
     });
   }
 
+<<<<<<< Updated upstream
   invokeView(id:number){
     this.router.navigate([`film/details`,id]);
+=======
+  searchFilmByRentalRateGreaterThan(): void{
+    this.filmService.getFilmByRentalRateGreaterThan(this.rate).subscribe((response)=>{
+      this.films = response;
+    })
+>>>>>>> Stashed changes
   }
 
   selectedSearchType: string  = '';
 
- 
+  invokeView(id:number){
+    this.router.navigate([`film/details`,id]);
+  }
 
-  performSearch(){
-
+  goBack(){
+    this.router.navigate(['/']);
   }
 
 }

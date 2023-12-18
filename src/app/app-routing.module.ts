@@ -10,11 +10,16 @@ import { FilmDetailsComponent } from './components/films/film-details/film-detai
 import { FilmListComponent } from './components/films/film-list/film-list.component';
 import { RouteGaurdService } from './services/route-gaurd.service';
 import { CustomerComponent } from './components/customers/customer/customer.component';
+<<<<<<< Updated upstream
 import { CustomerAddComponent } from './components/customers/customer-add/customer-add.component';
 import { CustomerUpdateComponent } from './components/customers/customer-update/customer-update.component';
 import { ActorAddComponent } from './actors/actor-add/actor-add.component';
 import { ActorComponent } from './actors/actor/actor.component';
 import { ActorUpdateComponent } from './actors/actor-update/actor-update.component';
+=======
+import { CustomerUpdateComponent } from './components/customers/customer-update/customer-update.component';
+import { LogoutComponent } from './components/logout/logout.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {
@@ -24,6 +29,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: CustomerLoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     component:FilmComponent,
@@ -56,6 +65,7 @@ const routes: Routes = [
     canActivate: [RouteGaurdService]
   },
   {
+<<<<<<< Updated upstream
     path: 'header/customer',
     component: CustomerComponent,
     canActivate: [RouteGaurdService]
@@ -88,6 +98,15 @@ const routes: Routes = [
   {
     path: 'actor/update',
     component: ActorUpdateComponent,
+=======
+    path: "header/customer",
+    component: CustomerComponent,
+    canActivate: [RouteGaurdService]
+  },
+  {
+    path: "header/customer-update",
+    component: CustomerUpdateComponent,
+>>>>>>> Stashed changes
     canActivate: [RouteGaurdService]
   }
 ];
