@@ -1,8 +1,4 @@
 <form class="container" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
-    <!-- <div class="form-group">
-          <label for="customerId">customerId</label>
-          <input type="text" class="form-control" id="customerId" name="customerId" ngModel value="Id generated after Payment">
-      </div> -->
     <div class="form-group">
       <label for="lastName">lastName</label>
       <input type="text" class="form-control" id="lastName" name="lkastName" [(ngModel)]="newCustomer.lastName">
@@ -19,10 +15,6 @@
       <label for="active">active</label>
       <input type="text" class="form-control" id="active" name="active" [(ngModel)]="newCustomer.active">
     </div>
-    <!-- <div class="form-group">
-          <label for="createDate">createDate</label>
-          <input type="text" class="form-control" id="createDate" name="createDate" readonly>
-      </div>  -->
     <div class="form-group">
       <label for="rentalId">rentalId</label>
       <select class="form-control" id="rentalId" name="rentalId" [(ngModel)]="newCustomer.rentalId">
@@ -45,12 +37,6 @@
         <option value="2">2</option>
       </select>
     </div>
-    <!-- 
-      <div class="form-group">
-          <label for="lastUpdate">LastUpdate</label>
-          <input type="text" class="form-control" id="lastUpdate" name="lastUpdate" readonly>
-      </div> -->
   
     <button type="submit" class="btn btn-primary">Submit</button>
-    <!-- <a href="customerpayment" type="submit" class="btn btn-primary">Submit</a> -->
   </form>

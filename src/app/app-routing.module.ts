@@ -18,6 +18,10 @@ import { ActorComponent } from './actors/actor/actor.component';
 import { ActorUpdateComponent } from './actors/actor-update/actor-update.component';
 
 import { LogoutComponent } from './components/logout/logout.component';
+import { StoreComponent } from './components/stores/store/store.component';
+import { StoreBySearchComponent } from './components/stores/store-by-search/store-by-search.component';
+import { StoreAddComponent } from './components/stores/store-add/store-add.component';
+import { StoreUpdateComponent } from './components/stores/store-update/store-update.component';
 
 const routes: Routes = [
   {
@@ -99,9 +103,30 @@ const routes: Routes = [
   {
     path: 'header/customer-update',
     component: CustomerUpdateComponent,
-
     canActivate: [RouteGaurdService],
   },
+  {
+    path: 'header/stores',
+    component: StoreComponent,
+    canActivate: [RouteGaurdService],
+  },
+  {
+    path: 'header/store-search',
+    component: StoreBySearchComponent,
+    canActivate: [RouteGaurdService],
+  },
+  {
+    path: 'header/store-add',
+    component: StoreAddComponent,
+    canActivate: [RouteGaurdService],
+  },
+  {
+    path: 'header/store-update',
+    component: StoreUpdateComponent,
+    canActivate: [RouteGaurdService],
+  }
+
+  
 ];
 
 @NgModule({

@@ -30,7 +30,7 @@
                     <a class="nav-link active" routerLink="/customer/update">Customer update</a>
                 </li>
 
-                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
                     <a class="nav-link active" routerLink="/header/actor">Add Actor</a>
                 </li>
 
@@ -38,13 +38,24 @@
                     <a class="nav-link active" routerLink="/header/actor/allActors">All Actor</a>
                 </li>
 
-                <li class="nav-item mx-2" *ngIf="isLoggedIn()">
-                    <a class="nav-link active" routerLink="login">Logout</a>
-                    <a class="nav-link active" routerLink="../header/customer">All Customers</a>
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="../header/customer-update">All Customers</a>
                 </li>
 
-                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
-                    <a class="nav-link active" routerLink="../header/customer-update">All Customers</a>
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="../header/stores">Stores</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="../header/store-search">Stores search</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="../header/store-add">Stores add</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="../header/store-update">Stores update</a>
                 </li>
 
                 <li class="nav-item mx-2" *ngIf="isLoggedIn()">
