@@ -48,16 +48,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let film of films">
                     <div class="card h-100">
                         <img src="{{film.url}}"
-<<<<<<< Updated upstream
-                            class="card-img-top" alt="Film Poster">
-                        <div class="card-body">
-                            <h5 class="card-title">{{film.title}}</h5>
-                            <p class="card-text" id="desc">{{film.description}}</p>
-                            
-                            <button type="button" class="btn btn-outline-info btn-sm"
-                                    (click)="invokeView(film.filmId)">View Film</button>
-                            <!-- <a routerLink="../film/details" class="btn btn-success btn-block">View Film</a> -->
-=======
+
                             class="card-img-top" height="100%" alt="Film Poster">
                         <div class="card-body">
                             <h5 class="card-title">{{film.title}}</h5>
@@ -66,7 +57,6 @@
 
                             <button type="button" class="btn btn-outline-info btn-sm"
                                     (click)="invokeView(film.filmId)">View Film</button>
->>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>

@@ -12,12 +12,8 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
-<<<<<<< Updated upstream
-export class RouteGaurdService{
-
-=======
 export class RouteGaurdService {
->>>>>>> Stashed changes
+
   constructor(private authService: AuthService, private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,

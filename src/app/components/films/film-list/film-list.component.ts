@@ -56,15 +56,11 @@ export class FilmListComponent {
     });
   }
 
-<<<<<<< Updated upstream
-  invokeView(id:number){
-    this.router.navigate([`film/details`,id]);
-=======
+
   searchFilmByRentalRateGreaterThan(): void{
     this.filmService.getFilmByRentalRateGreaterThan(this.rate).subscribe((response)=>{
       this.films = response;
     })
->>>>>>> Stashed changes
   }
 
   selectedSearchType: string  = '';

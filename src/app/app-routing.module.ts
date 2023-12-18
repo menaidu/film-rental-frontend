@@ -10,109 +10,102 @@ import { FilmDetailsComponent } from './components/films/film-details/film-detai
 import { FilmListComponent } from './components/films/film-list/film-list.component';
 import { RouteGaurdService } from './services/route-gaurd.service';
 import { CustomerComponent } from './components/customers/customer/customer.component';
-<<<<<<< Updated upstream
+
 import { CustomerAddComponent } from './components/customers/customer-add/customer-add.component';
 import { CustomerUpdateComponent } from './components/customers/customer-update/customer-update.component';
 import { ActorAddComponent } from './actors/actor-add/actor-add.component';
 import { ActorComponent } from './actors/actor/actor.component';
 import { ActorUpdateComponent } from './actors/actor-update/actor-update.component';
-=======
-import { CustomerUpdateComponent } from './components/customers/customer-update/customer-update.component';
+
 import { LogoutComponent } from './components/logout/logout.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [
   {
     path: '',
-    component:HomepageComponent
+    component: HomepageComponent,
   },
   {
     path: 'login',
-    component: CustomerLoginComponent
+    component: CustomerLoginComponent,
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
   },
   {
-    component:FilmComponent,
-    path:'header/films',
-    canActivate: [RouteGaurdService]
+    component: FilmComponent,
+    path: 'header/films',
+    canActivate: [RouteGaurdService],
   },
   {
     path: 'header',
     component: HeaderComponent,
-    canActivate: [RouteGaurdService]
+    canActivate: [RouteGaurdService],
   },
   {
     path: 'film/update/:id',
     component: FilmUpdateComponent,
-    canActivate: [RouteGaurdService]
+    canActivate: [RouteGaurdService],
   },
   {
     path: 'film/add',
     component: FilmAddComponent,
-    canActivate: [RouteGaurdService]
+    canActivate: [RouteGaurdService],
   },
   {
     path: 'header/film-list',
     component: FilmListComponent,
-    canActivate: [RouteGaurdService]
+    canActivate: [RouteGaurdService],
   },
   {
     path: 'film/details/:id',
     component: FilmDetailsComponent,
-    canActivate: [RouteGaurdService]
+    canActivate: [RouteGaurdService],
   },
   {
-<<<<<<< Updated upstream
     path: 'header/customer',
     component: CustomerComponent,
-    canActivate: [RouteGaurdService]
-  }
-  ,
+    canActivate: [RouteGaurdService],
+  },
   {
     path: 'customer/add',
     component: CustomerAddComponent,
-    canActivate: [RouteGaurdService]
-  }
-  ,
+    canActivate: [RouteGaurdService],
+  },
   {
     path: 'customer/update',
     component: CustomerUpdateComponent,
-    canActivate: [RouteGaurdService]
+    canActivate: [RouteGaurdService],
   },
   {
     path: 'header/actor',
     component: ActorAddComponent,
-    canActivate: [RouteGaurdService]
-  }
-  ,
+    canActivate: [RouteGaurdService],
+  },
   {
     path: 'header/actor/allActors',
     component: ActorComponent,
-    canActivate: [RouteGaurdService]
-  }
-  ,
- 
+    canActivate: [RouteGaurdService],
+  },
   {
     path: 'actor/update',
     component: ActorUpdateComponent,
-=======
-    path: "header/customer",
-    component: CustomerComponent,
-    canActivate: [RouteGaurdService]
   },
   {
-    path: "header/customer-update",
+    path: 'header/customer',
+    component: CustomerComponent,
+    canActivate: [RouteGaurdService],
+  },
+  {
+    path: 'header/customer-update',
     component: CustomerUpdateComponent,
->>>>>>> Stashed changes
-    canActivate: [RouteGaurdService]
-  }
+
+    canActivate: [RouteGaurdService],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -204,16 +204,6 @@ export class CustomerUpdateComponent {
       console.log('Please select an address.');
     }
   }
-<<<<<<< Updated upstream
-
-
-
-
-=======
  
- 
- 
- 
->>>>>>> Stashed changes
 }
  

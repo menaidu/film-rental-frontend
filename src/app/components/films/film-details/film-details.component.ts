@@ -38,10 +38,8 @@ export class FilmDetailsComponent {
 
   id: number = 0;
 
-<<<<<<< Updated upstream
-  // constructor(private filmService: FilmService, private router: Router) {}
-=======
->>>>>>> Stashed changes
+
+
   constructor(private filmService: FilmService, private router: Router, private activatedRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
