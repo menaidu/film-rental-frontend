@@ -32,12 +32,12 @@ export class FilmService {
     return this.httpClient.get<Film>(`${this.baseUrl}/language/${lang}`);
   }
 
-  getFilmByCategory(category: string): Observable<Film>{
-    return this.httpClient.get<Film>(`${this.baseUrl}/category/${category}`);
+  getFilmByRentalRateGreaterThan(rate: number){
+    return this.httpClient.get<Film>(`${this.baseUrl}/rate/gt/${rate}`);
   }
 
-  getFilmByStatus(status: string): Observable<Film[]> {
-    return this.httpClient.get<Film[]>(`${this.baseUrl}status/${status}`);
+  getFilmByCategory(category: string): Observable<Film>{
+    return this.httpClient.get<Film>(`${this.baseUrl}/category/${category}`);
   }
 
   addFilm(film: any): Observable<string> {

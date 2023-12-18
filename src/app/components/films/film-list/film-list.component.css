@@ -42,6 +42,10 @@ h6{
 }
 
 #select-search{
-  width: 1rem;
+  width: 4rem;
   outline: none;
+}
+
+card-img-top{
+  height: 20rem;
 }

@@ -26,19 +26,15 @@ export class CustomerLoginComponent {
     private router: Router
   ) {}
   login() {
-    // validate the username password by
-    // consuming endpoint in service layer
     this.userService.validate(this.newUser).subscribe((response) => {
-        // means user name and password is correct
         console.log(response);
-        // store the response (user object) in sessionStorage
         this.authService.storeUser(response);
         this.authService.isLoggedIn = true;
         this.router.navigate(['/']);
       },
       (error) => {
         console.log(error);
-        this.errorMessage = error.error.errorMessage;
+        this.errorMessage = error.error.message;
       }
     );
   }

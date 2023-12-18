@@ -9,50 +9,58 @@
                     <div class="card-body">
                         <div class="form-group mb-3">
                             <label for="clName">Last Name</label>
-                            <input type="text" class="form-control" id="clName" name="cklName" #customerLastName="ngModel"
+                             <input type="text" class="form-control" id="clName"
+                               name="cklName"#customerLastName="ngModel"
                                 [(ngModel)]="newCustomer.lastName">
                                 <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateLastName()">Update LastName</button>
                         </div>
-
+ 
                         <div class="form-group mb-3">
                             <label for="cfName">First Name</label>
-                            <input type="text" class="form-control" id="cfName" name="ckfName" #customerFirstName="ngModel"
-                                [(ngModel)]="newCustomer.firstName">
+                            <input type="text" class="form-control" id="cfName" name="ckfName" >
+                                <!-- #customerFirstName="ngModel"
+                                [(ngModel)]="newCustomer.firstName"> -->
                                 <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateFirstName()">Update FirstName</button>
                         </div>
                         <div class="form-group mb-3">
                             <label for="cemail">Email</label>
-                            <input type="text" class="form-control" id="cemail" name="ckemail" #customerEmail="ngModel"
-                                [(ngModel)]="newCustomer.email">
+                            <input type="text" class="form-control" id="cemail" name="ckemail">
+                                <!-- #customerEmail="ngModel"
+                                [(ngModel)]="newCustomer.email"> -->
                                 <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateEmail()">Update Email</button>
                         </div>
                         <div class="form-group mb-3">
                             <label for="cphone">Phone</label>
-                            <input type="text" class="form-control" id="cphone" name="ckphone" #customerPhone="ngModel"
-                                [(ngModel)]="newCustomer.address.phone">
+                            <input type="text" class="form-control" id="cphone" name="ckphone" >
+                             <!-- 
+                                #customerPhone="ngModel"> -->
+                                <!-- [(ngModel)]="newCustomer.address.phone"> -->
                                 <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updatePhone()">Update Phone</button>
                         </div>
                         <div class="form-group mb-3">
                             <label for="cAddress">Address</label>
-                            <select class="form-control" id="cAddress" name="ckAddress"
-                                [(ngModel)]="selectedAddressId">
-                                <!-- <option *ngFor="let address of addresses" [value]="address.addressId">
-                                    {{ address.addressId }}
-                                </option> -->
-                                
+                            <select class="form-control" id="cAddress" name="ckAddress">
+                                <!-- [(ngModel)]="selectedAddressId"> -->
+                               
+                               
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
-                            
+                           
                             </select>
                             <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateAddress()">Update Address</button>
                         </div>
                        
+<<<<<<< Updated upstream
 
+=======
+ 
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+ 

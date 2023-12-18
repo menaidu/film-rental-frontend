@@ -29,7 +29,7 @@ export class FilmComponent {
   }
 
   goBack(){
-    
+    this.router.navigate(['../']);
   }
 
 }
