@@ -2,23 +2,9 @@
     <h1>Store Detils</h1>
     <form>
         <input type="text" placeholder="Enter the country" name="getStoreId" [(ngModel)]="getStoreId">
-        <button type="button" class="btn btn-success" (click)="getStoresByStoreId()">Search</button>
+        <button type="button" class="btn btn-secondary" (click)="getStoresByStoreId()">Search</button>
     </form>
 </div>
- 
-<!-- <div *ngFor="let eachStore of store">
-{{eachStore.firstName}}
-{{eachStore.lastName}}
-{{eachStore.staffId}}
-{{eachStore.email}}
-</div>
- 
-<div *ngIf="getStoreId">
-   
-    <p>{{getStoreId?.storeId}}</p>
-    <p>{{getStoreId?.addressId}}</p>
-    <p>{{getStoreId?.lastUpdate}}</p>
-</div> -->
  
 <table class="table table-striped">
     <thead>
@@ -33,8 +19,6 @@
             <td>{{store.lastName}}</td>
             <td>{{store.staffId}}</td>
             <td>{{store.email}}</td>
-           
-           
         </tr>
     </tbody>
 </table>

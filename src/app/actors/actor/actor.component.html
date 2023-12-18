@@ -4,7 +4,7 @@
             <p>Search By First Name</p>
             <div class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="firstName">
-                <button class="btn btn-success" type="button" (click)="searchActorByFirstName()">Search</button>
+                <button class="btn btn-secondary" type="button" (click)="searchActorByFirstName()">Search</button>
             </div>
         </div>
         <div class="col-4">
@@ -20,20 +20,15 @@
             <p>Search By LastName</p>
             <div class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="lastName">
-                <button class="btn btn-success" type="submit" (click)="searchActorByLastName()">Search</button>
+                <button class="btn btn-secondary" type="submit" (click)="searchActorByLastName()">Search</button>
             </div>
         </div>
     </div>
- 
- 
- 
- 
     <div class="card-body">
         <div class="form-group">
  
             <div *ngIf="selectedActor">
                 <div *ngFor="let actor of selectedActor">
-                    <!-- <p>id:{{actor.actorId}}</p> -->
                     <p>firstname:{{actor.firstName}}</p>
                     <p>lastname:{{actor.lastName}}</p>
                     <button type="button" (click)="back()">Back</button>
@@ -41,8 +36,6 @@
             </div>
         </div>
     </div>
- 
- 
     <div class="row" *ngIf="!selectedActor">
         <div class="col" id="left-card-container">
             <h3 style="text-align: center; margin: 1.5rem 0rem;">All Actors</h3>
@@ -53,10 +46,9 @@
                         <div class="card-body">
                             <p class="desc">{{actor.firstName}}</p>
                             <p id="desc">{{actor.lastName}}</p>
-                            <a routerLink="../film/details" class="btn btn-success ">View</a>
+                            <a routerLink="../film/details" class="btn btn-secondary">View</a>
                             <a routerLink="" class="btn btn-warning"
                                 (click)="updateActor(actor.actorId,actor.firstName,actor.lastName)">Update</a>
- 
                         </div>
                     </div>
                 </div>
