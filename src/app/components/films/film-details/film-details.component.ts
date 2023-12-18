@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FilmService } from '../../../services/film.service';
 import { Film } from '../../../models/film.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-film-details',
@@ -12,6 +12,7 @@ export class FilmDetailsComponent {
   film: Film = {
     filmId: 0,
     title: '',
+    url:'',
     description: '',
     releaseYear: '',
     language: {
@@ -37,9 +38,11 @@ export class FilmDetailsComponent {
 
   id: number = 1;
 
-  constructor(private filmService: FilmService, private router: Router) {}
+  // constructor(private filmService: FilmService, private router: Router) {}
+  constructor(private filmService: FilmService, private router: Router, private activatedRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.id = this.activatedRouter.snapshot.params['id'];
     this.getFilmById();
   }
 

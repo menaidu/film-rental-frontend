@@ -1,0 +1,26 @@
+<h1>update details</h1>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-7" id="update-Store">
+            <form  #myForm="ngForm">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="text-center">Update Store</h2>
+                    </div>
+                    <div class="form-group mb-3">
+                    <label for="cphone">Phone</label>
+                    <input type="text" class="form-control" id="cphone" name="ckphone" #storePhone="ngModel"
+                        [(ngModel)]="newStore.phone">
+                        <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updatephone()">Update Phone</button>
+                    </div>
+                <div class="form-group mb-3">
+                <label for="caddress">Address</label>
+                <input type="text" class="form-control" id="caddress" name="ckaddress" #storeAddress="ngModel"
+                    [(ngModel)]="newStore.address">
+                    <button type="button" class="btn btn-success" [disabled]="myForm.invalid" (click)="updateaddress()">Update Address</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

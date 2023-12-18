@@ -1,0 +1,35 @@
+<div class="container-fluid my-3">
+    <div class="row justify-content-around" id="search-header">
+        <div class="col-4">
+            <p>Search By First Name</p>
+            <div class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="firstName">
+                <button class="btn btn-success" type="button" (click)="searchActorByFirstName()">Search</button>
+            </div>
+        </div>
+        <div class="col-4">
+            <p>Search By LastName</p>
+            <div class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search..." [(ngModel)]="lastName">
+                <button class="btn btn-success" type="submit" (click)="searchActorByLastName()">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="left-card-container">
+            <h3 style="text-align: center; margin: 1.5rem 0rem;">All Actors</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-6 col-sm-12 mb-5 mx-4" *ngFor="let actor of actors" id="cart">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" alt="..." style="height: 12rem; width: 180px;">
+                        <div class="card-body">
+                            <p class="desc">{{actor.firstName}}</p>
+                            <p id="desc">{{actor.lastName}}</p>
+                            <a routerLink="../film/details" class="btn btn-success">View Actor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

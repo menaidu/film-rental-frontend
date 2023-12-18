@@ -1,0 +1,29 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-7" id="add-film">
+            <form (ngSubmit)="addActor()" #myForm="ngForm">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="text-center">ADD ACTOR</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label for="fname">First Name</label>
+                            <input type="text" class="form-control" placeholder="Enter First Name" id="fname"
+                                name="fkactor" #myActorName="ngModel" [(ngModel)]="newActor.firstName">
+                        </div>
+ 
+                        <div class="form-group mb-3">
+                            <label for="lname">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Last Name" id="lname"
+                                name="fkactor" #myActorName="ngModel" [(ngModel)]="newActor.lastName">
+                        </div>
+                        <div class="card-footer bg-success d-grid mb-3">
+                            <button type ="submit" class="btn btn-light mr-5 text-success"[disabled]="myForm.invalid">ADD</button>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+         </div>
+    </div>

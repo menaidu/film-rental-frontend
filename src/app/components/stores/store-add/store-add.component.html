@@ -1,0 +1,30 @@
+<form class="container" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-group">
+      <label for="phone">phone</label>
+      <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="newStore.phone">
+    </div>
+    <div class="form-group">
+      <label for="lastUpdate">lastUpdate</label>
+      <input type="text" class="form-control" id="lastUpdate" name="lastUpdate" [(ngModel)]="newStore.lastUpdate">
+    </div>
+    <div class="form-group">
+      <label for="CustomerId">CustomerId</label>
+      <input type="text" class="form-control" id="CustomerId" name="CustomerId" [(ngModel)]="newStore.CustomerId">
+    </div>
+    <div class="form-group">
+      <label for="active">StaffId</label>
+      <input type="text" class="form-control" id="StaffId" name="StaffId" [(ngModel)]="newStore.StaffId">
+    </div>
+    <div class="form-group">
+      <label for="addressId">addressId</label>
+      <select class="form-control" id="addressId" name="addressId" [(ngModel)]="newStore.addressId">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="storeManagerId">storeManagerId</label>
+        <input type="text" class="form-control" id="storeManagerId" name="storeManagerId" [(ngModel)]="newStore.storeManagerId">
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

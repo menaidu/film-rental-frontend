@@ -15,6 +15,7 @@ export class FilmUpdateComponent {
   newFilm: Film = {
     filmId: 0,
     title: '',
+    url:'',
     description: '',
     releaseYear: '',
     language: {

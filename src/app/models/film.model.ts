@@ -5,6 +5,7 @@ import { Language } from "./language.model";
 export interface Film{
     filmId: number;
     title: string;
+    url:string;
     description: string;
     releaseYear: string;
     language: Language;

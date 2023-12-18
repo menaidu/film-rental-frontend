@@ -1,0 +1,22 @@
+<h2>Details</h2>
+<div class="container mt-5">
+    <div class="row">
+        <table class="table-responsive table-bordered table-success">
+    <thead>
+        <tr class="">
+            <th>Store  ID</th>  
+            <!-- <th>Address ID</th> -->
+            <th>Last Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let store of stores">
+            <td>{{store.storeId}}</td>
+            <!-- <td>{{store.address.addressId}}</td> -->
+            <td>{{store.lastUpdate}}</td>
+        </tr>
+    </tbody>
+   
+</table>
+    </div>
+</div>

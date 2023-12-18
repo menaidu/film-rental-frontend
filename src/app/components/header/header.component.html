@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top navbar-dark navbar-expand-lg" id="navBar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="path-to-your-logo.png" alt="Your Logo" height="60px" width="80px">
+        <a class="navbar-brand" href="#" style="font-size: 30px;">
+            Film Rental
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,13 +19,34 @@
                     <a class="nav-link active" routerLink="../header/film-list">All Films</a>
                 </li>
 
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
+                    <a class="nav-link active" routerLink="header/customer">All Customer</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
+                    <a class="nav-link active" routerLink="/customer/add">Customer add</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='admin'">
+                    <a class="nav-link active" routerLink="/customer/update">Customer update</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="/header/actor">Add Actor</a>
+                </li>
+ 
+                <li class="nav-item mx-2" *ngIf="isLoggedIn() && getRole()=='customer'">
+                    <a class="nav-link active" routerLink="/header/actor/allActors">All Actor</a>
+                </li>
+
                 <li class="nav-item mx-2" *ngIf="isLoggedIn()">
-                    <a class="nav-link" routerLink="login">Logout</a>
+                    <a class="nav-link active" routerLink="login">Logout</a>
                 </li>
 
                 <li class="nav-item mx-2" *ngIf="!isLoggedIn()">
-                    <a class="nav-link" routerLink="login">Login</a>
+                    <a class="nav-link active" routerLink="login">Login</a>
                 </li>
+
             </ul>
         </div>
     </div>

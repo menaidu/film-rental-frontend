@@ -93,17 +93,7 @@ export class CustomerUpdateComponent {
     }
   }
 
-  findByActive():void{
-    this.customerService.findByActive(this.newCustomer).subscribe((Response)=>{
-      console.log(Response);
-    })
-  }
 
-  findByInActive():void{
-    this.customerService.findByInActive(this.newCustomer).subscribe((Response)=>{
-      console.log(Response);
-    })
-  }
 
 
 }

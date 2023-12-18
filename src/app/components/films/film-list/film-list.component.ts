@@ -59,6 +59,10 @@ export class FilmListComponent {
     });
   }
 
+  invokeView(id:number){
+    this.router.navigate([`film/details`,id]);
+  }
+
   selectedSearchType: string  = '';
 
  

@@ -8,5 +8,6 @@ export interface Store{
     lastUpdate: Date;
     allCustomers: Customer[];
     allStaff: Staff[];
-    address: Address;
+    address: Address,
+    manager:string;
 }

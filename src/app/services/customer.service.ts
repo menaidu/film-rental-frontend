@@ -11,7 +11,7 @@ export class CustomerService {
   // getCustomers() {
   //   throw new Error('Method not implemented.');
   // }
-  private baseUrl="http://localhost:8090/api/customers";
+  private baseUrl="http://localhost:8088/api/customers";
   constructor(private httpClient:HttpClient) {}
 
   getCustomer() : Observable<Customer[]>{
@@ -59,7 +59,7 @@ export class CustomerService {
   }
 
   getCustomerByLastName(ln: string): Observable<Customer> {
-    const Url="http://localhost:8090/api/customers";
+    const Url="http://localhost:8088/api/customers";
 
     return this.httpClient.get<Customer>(`${Url}/lastname/${ln}`);
   }

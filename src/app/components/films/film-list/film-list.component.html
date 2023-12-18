@@ -41,12 +41,15 @@
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor="let film of films">
                     <div class="card h-100">
-                        <img src="https://blogs-images.forbes.com/dongroves/files/2017/05/B-and-A.jpg"
+                        <img src="{{film.url}}"
                             class="card-img-top" alt="Film Poster">
                         <div class="card-body">
                             <h5 class="card-title">{{film.title}}</h5>
                             <p class="card-text" id="desc">{{film.description}}</p>
-                            <a routerLink="../film/details" class="btn btn-success btn-block">View Film</a>
+                            
+                            <button type="button" class="btn btn-outline-info btn-sm"
+                                    (click)="invokeView(film.filmId)">View Film</button>
+                            <!-- <a routerLink="../film/details" class="btn btn-success btn-block">View Film</a> -->
                         </div>
                     </div>
                 </div>
